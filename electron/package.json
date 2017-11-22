@@ -1,12 +1,12 @@
 {
-    "name": "skycoin",
-    "productName": "Skycoin",
-    "author": "skycoin",
+    "name": "matalliccoin",
+    "productName": "MatallicCoin",
+    "author": "matalliccoin",
     "main": "src/electron-main.js",
     "version": "0.20.3",
-    "description": "skycoin wallet",
+    "description": "matalliccoin wallet",
     "build": {
-        "appId": "org.skycoin.skycoin",
+        "appId": "org.matalliccoin.matalliccoin",
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true
