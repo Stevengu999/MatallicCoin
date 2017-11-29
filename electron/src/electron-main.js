@@ -25,7 +25,7 @@ let currentURL;
 app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1');
 app.commandLine.appendSwitch('ssl-version-fallback-min', 'tls1.2');
 app.commandLine.appendSwitch('--no-proxy-server');
-app.setAsDefaultProtocolClient('matalliccoin');
+app.setAsDefaultProtocolClient('metalicoin');
 
 
 
@@ -53,15 +53,15 @@ function startSkycoin() {
   var exe = (() => {
         switch (process.platform) {
   case 'darwin':
-    return path.join(appPath, '../../Resources/app/matalliccoin');
+    return path.join(appPath, '../../Resources/app/metalicoin');
   case 'win32':
     // Use only the relative path on windows due to short path length
     // limits
-    return './resources/app/matalliccoin.exe';
+    return './resources/app/metalicoin.exe';
   case 'linux':
-    return path.join(path.dirname(appPath), './resources/app/matalliccoin');
+    return path.join(path.dirname(appPath), './resources/app/metalicoin');
   default:
-    return './resources/app/matalliccoin';
+    return './resources/app/metalicoin';
   }
 })()
 
@@ -131,7 +131,7 @@ function createWindow(url) {
   win = new BrowserWindow({
     width: 1200,
     height: 900,
-    title: 'MatallicCoin',
+    title: 'MetaliCoin',
     nodeIntegration: false,
     webPreferences: {
       webgl: false,
@@ -166,9 +166,9 @@ function createWindow(url) {
 
   // create application's main menu
   var template = [{
-    label: "MatallicCoin",
+    label: "MetaliCoin",
     submenu: [
-      { label: "About MatallicCoin", selector: "orderFrontStandardAboutPanel:" },
+      { label: "About MetaliCoin", selector: "orderFrontStandardAboutPanel:" },
       { type: "separator" },
       { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); } }
     ]

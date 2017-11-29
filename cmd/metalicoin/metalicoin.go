@@ -36,7 +36,7 @@ var (
 	help = false
 
 	logger     = logging.MustGetLogger("main")
-	logFormat  = "[matalliccoin.%{module}:%{level}] %{message}"
+	logFormat  = "[metalicoin.%{module}:%{level}] %{message}"
 	logModules = []string{
 		"main",
 		"daemon",
@@ -114,7 +114,7 @@ type Config struct {
 	// If true, print the configured client web interface address and exit
 	PrintWebInterfaceAddress bool
 
-	// Data directory holds app data -- defaults to ~/.matalliccoin
+	// Data directory holds app data -- defaults to ~/.metalicoin
 	DataDirectory string
 	// GUI directory contains assets for the html gui
 	GUIDirectory string
@@ -198,7 +198,7 @@ func (c *Config) register() {
 	flag.BoolVar(&c.PrintWebInterfaceAddress, "print-web-interface-address",
 		c.PrintWebInterfaceAddress, "print configured web interface address and exit")
 	flag.StringVar(&c.DataDirectory, "data-dir", c.DataDirectory,
-		"directory to store app data (defaults to ~/.matalliccoin)")
+		"directory to store app data (defaults to ~/.metalicoin)")
 	flag.StringVar(&c.ConnectTo, "connect-to", c.ConnectTo,
 		"connect to this ip only")
 	flag.BoolVar(&c.ProfileCPU, "profile-cpu", c.ProfileCPU,
@@ -234,7 +234,7 @@ func (c *Config) register() {
 		"genesis block timestamp")
 
 	flag.StringVar(&c.WalletDirectory, "wallet-dir", c.WalletDirectory,
-		"location of the wallet files. Defaults to ~/.matalliccoin/wallet/")
+		"location of the wallet files. Defaults to ~/.metalicoin/wallet/")
 
 	flag.DurationVar(&c.OutgoingConnectionsRate, "connection-rate",
 		c.OutgoingConnectionsRate, "How often to make an outgoing connection")
@@ -280,8 +280,8 @@ var devConfig = Config{
 	RPCThreadNum:     5,
 
 	LaunchBrowser: true,
-	// Data directory holds app data -- defaults to ~/.matalliccoin
-	DataDirectory: ".matalliccoin",
+	// Data directory holds app data -- defaults to ~/.metalicoin
+	DataDirectory: ".metalicoin",
 	// Web GUI static resources
 	GUIDirectory: "./src/gui/static/",
 	// Logging
@@ -305,7 +305,7 @@ var devConfig = Config{
 	// Enable cpu profiling
 	ProfileCPU: false,
 	// Where the file is written to
-	ProfileCPUFile: "matalliccoin.prof",
+	ProfileCPUFile: "metalicoin.prof",
 	// HTTP profiling interface (see http://golang.org/pkg/net/http/pprof/)
 	HTTPProf: false,
 	// Will force it to connect to this ip:port, instead of waiting for it
@@ -505,7 +505,7 @@ func configureDaemon(c *Config) daemon.Config {
 	return dc
 }
 
-// Run starts the matalliccoin node
+// Run starts the metalicoin node
 func Run(c *Config) {
 	defer func() {
 		// try catch panic in main thread
@@ -586,7 +586,7 @@ func Run(c *Config) {
 		var err error
 		if c.WebInterfaceHTTPS {
 			// Verify cert/key parameters, and if neither exist, create them
-			errs := cert.CreateCertIfNotExists(host, c.WebInterfaceCert, c.WebInterfaceKey, "Matalliccoind")
+			errs := cert.CreateCertIfNotExists(host, c.WebInterfaceCert, c.WebInterfaceKey, "Metalicoind")
 			if len(errs) != 0 {
 				for _, err := range errs {
 					logger.Error(err.Error())

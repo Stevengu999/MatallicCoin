@@ -1,12 +1,12 @@
 {
-    "name": "matalliccoin",
-    "productName": "MatallicCoin",
-    "author": "matalliccoin",
+    "name": "metalicoin",
+    "productName": "MetaliCoin",
+    "author": "metalicoin",
     "main": "src/electron-main.js",
     "version": "0.20.3",
-    "description": "matalliccoin wallet",
+    "description": "metalicoin wallet",
     "build": {
-        "appId": "org.matalliccoin.matalliccoin",
+        "appId": "org.metalicoin.metalicoin",
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true
