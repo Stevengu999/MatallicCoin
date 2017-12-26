@@ -107,6 +107,8 @@ func LoadJSON(filename string, thing interface{}) error {
 		return err
 	}
 
+	defer file.Close()
+
 	dec := json.NewDecoder(file)
 	dec.UseNumber()
 	return dec.Decode(thing)
